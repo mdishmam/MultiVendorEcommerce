@@ -37,3 +37,12 @@ class ProductAdmin(admin.ModelAdmin):
 @admin.register(Unit)
 class UnitAdmin(admin.ModelAdmin):
     pass
+
+class SingleProductInCartAdmin(admin.TabularInline):
+    model = SingleProductInCart
+    extra = 0
+
+@admin.register(Cart)
+class CartAdmin(admin.ModelAdmin):
+    list_display = ('user',)
+    inlines = [SingleProductInCartAdmin]
