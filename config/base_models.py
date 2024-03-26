@@ -29,6 +29,13 @@ class BuyerUserMixinOneToOne(models.Model):
     class Meta:
         abstract = True
 
+
+class SellerUserMixinOneToOne(models.Model):
+    user = models.OneToOneField(settings.AUTH_USER_MODEL, limit_choices_to={'type':'seller'}, on_delete=models.CASCADE)
+
+    class Meta:
+        abstract = True
+
 class TimeStampMixin(models.Model):
     created_at = models.DateTimeField(default=timezone.now)
 

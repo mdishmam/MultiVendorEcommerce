@@ -14,11 +14,12 @@ class SingleOrder(models.Model):
 
 class Order(BuyerUserMixin, TimeStampWithUpdateMixin):
     PENDING = 'pending'
-    DELIVERED = 'delivered'
+    CHECKED = 'checked'
+
 
     order_status_choices = [
         (PENDING, 'Pending'),
-        (DELIVERED, 'Delivered')
+        (CHECKED, 'Checked')
     ]
 
     status = models.CharField(max_length=100, choices=order_status_choices)
