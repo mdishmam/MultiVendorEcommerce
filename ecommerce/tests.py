@@ -1,8 +1,7 @@
 import random
 
 from django.test import TestCase
-from ecommerce.models import Product
-
+from ecommerce.models import Product, User
 
 # Create your tests here.
 
@@ -138,5 +137,5 @@ for i in product_names:
         unit_id=1,
         quantity_at_present=random.randint(10,100),
         minimum_quantity=5,
-        user__username="BotSeller"
+        user=User.objects.get(username="BotSeller")
     )
