@@ -25,3 +25,6 @@ urlpatterns = [
     path("api/", include("ecommerce.urls")),
     path('products/', ecommerce.views.AllProductsView.as_view(), name="view_app_products")
 ]
+
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+urlpatterns += staticfiles_urlpatterns()
