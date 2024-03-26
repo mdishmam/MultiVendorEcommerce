@@ -138,5 +138,5 @@ for i in product_names:
         unit_id=1,
         quantity_at_present=random.randint(10,100),
         minimum_quantity=5,
-        user_id=4
+        user__username="BotSeller"
     )
