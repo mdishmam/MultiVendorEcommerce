@@ -15,6 +15,7 @@ class Product(TimeStampWithUpdateMixin, SellerUserMixin):
     description = models.TextField()
     image = models.ImageField(null=True, blank=True)
     price = models.FloatField()
+    buy_price = models.FloatField()
     unit = models.ForeignKey(Unit, on_delete=models.CASCADE)
 
     quantity_at_present = models.FloatField(default=0)

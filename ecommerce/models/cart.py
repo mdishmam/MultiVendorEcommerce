@@ -16,5 +16,5 @@ class SingleProductInCart(models.Model):
 class Cart(BuyerUserMixinOneToOne, TimeStampWithUpdateMixin):
 
     def __str__(self):
-        return self.user
+        return self.user.username
 

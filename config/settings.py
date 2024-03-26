@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     # Packages
     "rest_framework",
     "rest_framework.authtoken",
+    "django_htmx",
     # Custom Apps
     "ecommerce"
 ]
@@ -52,6 +53,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "django_htmx.middleware.HtmxMiddleware",
 ]
 
 ROOT_URLCONF = "config.urls"

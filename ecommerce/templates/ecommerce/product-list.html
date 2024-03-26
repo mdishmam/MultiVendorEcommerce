@@ -1,0 +1,15 @@
+{% for product in products %}
+  {% if forloop.last %}
+    <div
+        hx-trigger="revealed"
+        hx-get="{% url 'view_app_products' %}?page={{ page_obj.number|add:1 }}"
+        hx-swap="afterend"
+    >
+  {% else %}
+    <div>
+  {% endif %}
+      <h2>{{ product.name }}</h2>
+      <p>{{ product.description }}</p>
+      <p>{{ product.price }}</p>
+    </div>
+{% endfor %}

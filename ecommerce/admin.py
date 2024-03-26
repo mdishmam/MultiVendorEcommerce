@@ -46,3 +46,13 @@ class SingleProductInCartAdmin(admin.TabularInline):
 class CartAdmin(admin.ModelAdmin):
     list_display = ('user',)
     inlines = [SingleProductInCartAdmin]
+
+
+class SingleOrderAdmin(admin.TabularInline):
+    model = SingleOrder
+    extra = 0
+
+@admin.register(Order)
+class OrderAdmin(admin.ModelAdmin):
+    # list_display = ('')
+    inlines = [SingleOrderAdmin]
