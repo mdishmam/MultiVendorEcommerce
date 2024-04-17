@@ -147,3 +147,4 @@ AUTHENTICATION_BACKENDS = [
     # "ecommerce.authentication.SellerBackend",
     "django.contrib.auth.backends.ModelBackend",
 ]
+SESSION_COOKIE_SECURE = True
