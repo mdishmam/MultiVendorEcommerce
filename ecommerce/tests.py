@@ -1,7 +1,7 @@
-import random
 
 from django.test import TestCase
 from ecommerce.models import Product, User
+import secrets
 
 # Create your tests here.
 
@@ -119,23 +119,23 @@ benefits = ["enhance your productivity", "immerse yourself in entertainment", "s
 
 # Generate a random description
 def generate_description():
-    opening = random.choice(opening_phrases)
-    feature = random.choice(features)
-    benefit = random.choice(benefits)
+    opening = secrets.choice(opening_phrases)
+    feature = secrets.choice(features)
+    benefit = secrets.choice(benefits)
 
     description = f"{opening} This product features {feature}, allowing you to {benefit}."
     return description
 
 
 for i in product_names:
-    price = random.randint(100,10000)
+    price = secrets.SystemRandom().randint(100,10000)
     Product.objects.create(
         name=i,
         description=generate_description(),
         price=price,
-        buy_price=price-random.randint(10,50),
+        buy_price=price-secrets.SystemRandom().randint(10,50),
         unit_id=1,
-        quantity_at_present=random.randint(10,100),
+        quantity_at_present=secrets.SystemRandom().randint(10,100),
         minimum_quantity=5,
         user=User.objects.get(username="BotSeller")
     )
